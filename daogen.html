@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Daoist Name Finder</title>
+    <script type="text/javascript" src="assets/dao.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Cinzel|Marcellus+SC" rel="stylesheet">
+</head>
+
+<style type='text/css'>
+    @keyframes test {
+    
+    	0% {background-position-x:0%,0%;background-position-y:0%,0%;}
+    	100% {background-position-x:333px,000%;background-position-y:777px,000%;}
+    
+    }
+    
+    body {
+      background-image: url('assets/test.png'), url('assets/bg.png');
+      animation-name: test;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    
+    img.cen {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    } 
+    
+    p {
+    
+      color: #ffffff;
+      font-size: 28px;
+      text-shadow: 0px 0px 5px #ffffff,0px 0px 10px #ffffff,-1px 0px #000,0px -1px #000,1px 0px #000,0px 1px #AAA;
+      font-family: 'Marcellus SC',serif;
+      text-align: center;
+      
+      
+    
+    }
+    
+    @font-face {
+      font-family: yoza;
+      src: url('assets/YOZAKURA-Regular.otf');
+    
+    }
+    
+    input#a {
+    	font-family: 'Permanent Marker', cursive;//yoza;
+    	font-size: 50px;
+    	background: url('assets/pg.jpg');
+    	text-align: center;
+    	border:2px solid #456879;
+    	border-radius:353px;
+    	height: 75px;
+    	//min-width: 500px;
+    	color: #444444;
+    	text-shadow: -1px 0px #FFF,0px -1px #FFF,1px 0px #FFF,0px 1px #FFF,0px 0px 5px #97e7ff,0px 0px 10px #97e7ff;
+    
+    }
+    
+    
+    input#b{
+    
+      border-radius: 33px;
+      font-family: 'Cinzel',serif;
+	  font-weight: bold;
+      color: #ffffff;
+      font-size: 16px;
+      background: url('assets/jade.jpg');
+      padding: 5px 10px 5px 10px;
+      text-decoration: none;
+    }
+    
+    input#b:hover {
+      background: url('assets/white.png'),url('assets/jade.jpg');
+      text-decoration: none;
+    }
+    
+    }
+</style>
+
+<body>
+
+    <div>
+
+        <img src='assets/immortal2.png' id='makeit' height='400px' class='cen'></img>
+
+        <p> Greetings, fellow daoist. We have been expecting you. Your master sent word ahead, of your arrival.</p>
+
+        <p>You have come to find your daoist title, have you not? Our formation will divine it from the light of the stars. Now, either write your mortal name on this talisman to guide it, or leave it blank, and let nothing but destiny decide your great title!</p>
+
+        <div id="wrapper" style="text-align: center">
+            <div id="div" style="display: inline-block;">
+
+                <form action="">
+
+                    <input type='text' name='origname' value='' id='a'><br /><br />
+
+                    <input type="button" onclick="document.getElementById('i').innerHTML = daoName(false,seeds(this.form))" value='Activate the Mountain and Sea Array' id='b'>
+
+                    <input type="button" onclick="document.getElementById('i').innerHTML = daoName(true,seeds(this.form))" value='Activate the Three Realms Array' id='b'>
+                </form>
+
+            </div>
+        </div>
+
+
+        <p id="i"></p>
+
+    </div>
+
+</body>
+
+</html>
