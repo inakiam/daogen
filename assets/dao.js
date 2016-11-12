@@ -56,6 +56,15 @@ function pluralize(term){
 	
 }
 
+function s(){
+	
+	c = [["Butterfl","y","ies"],["Cockroach","","es"],["Deer","",""],["Dragonfl","y","ies"],["Fox","","es"],["G","oose","eese"],["Mosquito","","es"],["Ox","","en"],["Phoenix","","es"],["Sta","ff","ves"],["Wol","f","ves"],["Leech","","es"],["Loach","","es"],["Hero","","es"],["Eternit","y","ies"],["Serenit","y","ies"],["Vort","ex","ices"],["Volcano","","es"],["Kni","fe","ves"],["Deit","y","ies"],["Cris","is","es"],["North","",""],["South","",""],["East","",""],["West","",""]];
+	
+	for(var i =0;i<c.length;i++){console.log("\"" + c[i][0] + c[i][1] + "\",");}
+	
+	
+}
+
 //This one can be touched in areas I marked as safe.
 function daoName(rwxmode,seed){
 	
@@ -66,7 +75,7 @@ function daoName(rwxmode,seed){
 	
 	var pluralisers = ["Two","Three","Five","Seven","Nine","Ten","Eleven","Thirteen","Hundred","Thousand","Myriad","Infinite","Many","Manifold","Infinite","Nintey-Nine"];
 	
-	var nouns = ["Alligator","Ant","Axe","Bat","Bear","Beetle","Broadsword","Cat","Caterpillar","Centipede","Chameleon","Cleaver","Cobra","Crane","Cricket","Crocodile","Dagger","Dog","Dove","Dragon","Drake","Eagle","Egret","Elephant","Fan","Flea","Frog","Gorilla","Grasshopper","Greatsword","Gryphon","Hare","Hawk","Hornet","Hummingbird","Jackal","Jaguar","Leopard","Lion","Lizard","Llama","Locust","Mace","Mantis","Millipede","Moth","Newt","Owl","Panda","Parrot","Peacock","Penguin","Pigeon","Pill","Porcupine","Qilin","Saber","Salamander","Scorpion","Shadow","Shield","Snake","Sparrow","Spear","Spider","Swan","Sword","Tarantula","Tiger","Toad","Tortoise","Toucan","Turtle","Unicorn","Viper","Wasp","Vampire","Mermaid","Manticore","Demon","Devil","Immortal","Ghost","Wyvern","Earthworm","Killer","Assassin","Pearl","Love","Hate","Mountain","Forest","River","Sea","Ocean","Lake","Cloud","Thunderclap","Tempest","Rainstorm","Flood","Tree","Flower","Rose","Chrysanthemum","Lotus","Orchid","Boulder","Heart","Fist","Blood","Moon","Sun","Star","Starlight","Meteor","Whirlpool","Windstorm","Hailstorm","Planet","Torture","Ice","Fire","Earth ","Metal","Air","Water","Darkness","Light ","Mansion","Pagoda","Spring","Summer","Fall","Winter","Bridge","Cauldron","God","Destruction","Murder","Salvation","Reincarnation","Shade","Death","Jade","Serpent","Python","Chaos","Nirvana","Mirror","Chopsticks","Wine","Alcohol","Flagon","Arrow","Chariot","Millionaire","Billionaire","Trillionaire","Quadrillionaire","Allheaven","Origin","Scholar","Revenant","Immortal","","Seahorse","Porcupine","Hound","Divinity","Chariot"];
+	var nouns = ["Alligator","Ant","Axe","Bat","Bear","Beetle","Broadsword","Cat","Caterpillar","Centipede","Chameleon","Cleaver","Cobra","Crane","Cricket","Crocodile","Dagger","Dog","Dove","Dragon","Drake","Eagle","Egret","Elephant","Fan","Flea","Frog","Gorilla","Grasshopper","Greatsword","Gryphon","Hare","Hawk","Hornet","Hummingbird","Jackal","Jaguar","Leopard","Lion","Lizard","Llama","Locust","Mace","Mantis","Millipede","Moth","Newt","Owl","Panda","Parrot","Peacock","Penguin","Pigeon","Pill","Porcupine","Qilin","Saber","Salamander","Scorpion","Shadow","Shield","Snake","Sparrow","Spear","Spider","Swan","Sword","Tarantula","Tiger","Toad","Tortoise","Toucan","Turtle","Unicorn","Viper","Wasp","Vampire","Mermaid","Manticore","Demon","Devil","Immortal","Ghost","Wyvern","Earthworm","Killer","Assassin","Pearl","Love","Hate","Mountain","Forest","River","Sea","Ocean","Lake","Cloud","Thunderclap","Tempest","Rainstorm","Flood","Tree","Flower","Rose","Chrysanthemum","Lotus","Orchid","Boulder","Heart","Fist","Blood","Moon","Sun","Star","Starlight","Meteor","Whirlpool","Windstorm","Hailstorm","Planet","Torture","Ice","Fire","Earth ","Metal","Air","Water","Darkness","Light ","Mansion","Pagoda","Spring","Summer","Fall","Winter","Bridge","Cauldron","God","Destruction","Murder","Salvation","Reincarnation","Shade","Death","Jade","Serpent","Python","Chaos","Nirvana","Mirror","Chopsticks","Wine","Alcohol","Flagon","Arrow","Chariot","Millionaire","Billionaire","Trillionaire","Quadrillionaire","Allheaven","Origin","Scholar","Revenant","Immortal","","Seahorse","Porcupine","Hound","Divinity","Chariot","Butterfly","Cockroach","Deer","Dragonfly","Fox","Goose","Mosquito","Ox","Phoenix","Staff","Wolf","Leech","Loach","Hero","Eternity","Serenity","Vortex","Volcano","Knife","Deity","Crisis","North","South","East","West"];
 	
 	
 	var bp = "The Diviniation is complete.<br /><br /> You are... "
