@@ -87,9 +87,9 @@ function s(){
 
 function setTitles(){
 	
-	var nullTitles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Crown Prince","Sect Leader","Pontifex","Sect Founder","Supreme General","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
+	var nullTitles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Sect Leader","Pontifex","Sect Founder","Supreme General","Ancestor","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
 
-	var genderTitles = [["Swordsman","Swordswoman"],["Master","Mistress"],["Lord","Lady"],["King","Queen"],["Grandmaster","Grandmistress"],["Dao Emperor","Dao Empress"],["Dao Master","Dao Mistress"],["Chieftan","Cheiftess"],["Abbot","Abess"],["Greatfather","Greatmother"],["Dao Lord","Dao Lady"],["Patriarch","Matriarch"],["Priest","Priestess"],["Ancestor","Ancestress"],["Monk","Nun"],["Prince","Princess"],["Grandpa","Granny"]];
+	var genderTitles = [["Swordsman","Swordswoman"],["Master","Mistress"],["Lord","Lady"],["King","Queen"],["Grandmaster","Grandmistress"],["Dao Emperor","Dao Empress"],["Dao Master","Dao Mistress"],["Chieftan","Cheiftess"],["Abbot","Abess"],["Greatfather","Greatmother"],["Dao Lord","Dao Lady"],["Patriarch","Matriarch"],["Priest","Priestess"],["Monk","Nun"],["Prince","Princess"],["Grandpa","Granny"],["Crown Prince","Crown Princess"]];
 	
 	var index;
 	
