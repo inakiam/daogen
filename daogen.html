@@ -40,6 +40,36 @@
     
     }
 	
+	span#gender {
+    
+      color: #ffffff;
+      font-size: 26px;
+      text-shadow: 0px 0px 5px #ffcc00,0px 0px 10px #ffcc00,-1px 0px #000,0px -1px #000,1px 0px #000,0px 1px #AAA;
+      font-family: 'Marcellus SC',serif;
+      text-align: center;
+      
+      
+    
+    }
+	
+	.male:before {
+	
+		content: "men";
+		
+	}
+	
+	.female:before {
+	
+		content: "women";
+		
+	}
+	
+	.neuter:before {
+	
+		content: "cultivators";
+		
+	}
+	
 	div#i {
     
       color: #ffffff;
@@ -90,7 +120,6 @@
       text-decoration: none;
     }
     
-    }
 </style>
 
 <body>
@@ -100,6 +129,8 @@
         <img src='assets/immortal2.png' id='makeit' height='400px' class='cen'></img>
 
         <p> Greetings, fellow daoist. We have been expecting you. Your master sent word ahead, of your arrival.</p>
+		
+		<p>Even had he not, we would have known of your coming. You are one of the foremost chosen among the <span id='gender' class="neuter" onclick="genderswap()"></span> of your generation.</p>
 
         <p>You have come to find your daoist title, have you not? Our formation will divine it from the light of the stars.</p>
 

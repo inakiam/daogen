@@ -17,6 +17,26 @@ String.prototype.hashCode = function() {
   return hash;
 };
 
+function genderswap(){
+	
+	if(document.getElementById("gender").className == "male"){
+
+		document.getElementById("gender").className = "female";
+		
+	}
+	else if(document.getElementById("gender").className == "female") {
+		
+		document.getElementById("gender").className = "neuter";
+		
+	}
+	else{
+		
+		document.getElementById("gender").className = "male";
+		
+	}
+	
+}
+
 //Or this one.
 function seeds(input){
 	
@@ -65,11 +85,40 @@ function s(){
 	
 }
 
+function setTitles(){
+	
+	var nullTitles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Crown Prince","Sect Leader","Pontifex","Sect Founder","Supreme General","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
+
+	var genderTitles = [["Swordsman","Swordswoman"],["Master","Mistress"],["Lord","Lady"],["King","Queen"],["Grandmaster","Grandmistress"],["Dao Emperor","Dao Empress"],["Dao Master","Dao Mistress"],["Chieftan","Cheiftess"],["Abbot","Abess"],["Greatfather","Greatmother"],["Dao Lord","Dao Lady"],["Patriarch","Matriarch"],["Priest","Priestess"],["Ancestor","Ancestress"],["Monk","Nun"],["Prince","Princess"],["Grandpa","Granny"]];
+	
+	var index;
+	
+	var finalTitles = nullTitles;
+	
+	if(document.getElementById("gender").className == "neuter"){
+		
+		return finalTitles;
+		
+	}
+	
+	index = document.getElementById("gender").className == "male" ? 0 : 1;
+	
+	for(var i = 0; i < genderTitles.length; i++){
+	
+		finalTitles.push(genderTitles[i][index]);
+		
+	}
+	
+	return finalTitles;
+	
+}
+
 //This one can be touched in areas I marked as safe.
 function daoName(rwxmode,seed){
 	
 	//Safe-to-edit vars
-	var titles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Crown Prince","Sect Leader","Pontifex","Sect Founder","Supreme General","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
+	var titles = setTitles();
+	
 	
 	var adj = ["Abstruse","Angry","Arcadian","Archaic","Azure","Bashful","Berserk","Black","Blood-colored","Blue","Bronze","Capricious","Celestial","Cerulean","Clairvoyant","Cosmic","Courageous","Cowardly","Crafty","Crimson","Curious","Cyan","Demonic","Devilish","Dharmic","Divine","Dreadful","Enlightened","Enraged","Ethereal","Faceless","Fiendish","Furious","Garrulous","Ghostly","Golden","Gossamer","Greedy","Green","Heartbroken","Heavenly","Indigo","Jade","Jubilant","Loquacious","Lovesick","Lucky","Magenta","Magical","Magnanimous","Melancholic","Mystic","Necromantic","Nefarious","Occult","Onyx","Orange","Prideful","Profound","Psychic","Purple","Red","Renegade","Saffron","Sagacious","Serene","Shameless","Silver","Sublime","Supernal","Supreme","Transcendant","Vampiric","Vermilion","Voracious","White","Yang","Yellow","Yin","Yin-Yang","Youthful","Murderous","Vengeful","Killer","Benevolent","Chivalrous","Gallant","Heroic","Magnanimous","Intrepid","Reckless","Slashing","Stabbing","Glittering","Jumping","Running","Leaping","Flying","Floating","Sleeping","Eternal","Serene","Volcanic","Elemental","Icy","Burning","Freezing","Tranquil","Hellish","Underworld","Netherworld","Reborn","Deadly","Cross-legged","Lunar","Solar","Stellar","Universal","One","Neverending","Feathered","Furry","Obese","Gargantuan","Gigantic","Mythical","Ancient","Primeval","Primordial","Chaotic","Venerable","All-knowing","Omniscient","Nirvanic","Fragrant","Spicy","Revolting","Handsome","Bearded","Long-haired","Undying","Undead","Diamond","Violet","Righteous","Drunken","Invincible","Poisonous","Venemous","Toxic","Spinning","Whirling","Psycopathic","Granite","Stone","Wooden","Fiery","Raging","Empty","Original","Ophidian","Iridian","Subtle","True","False","Legendary","Fluid","Flowing","Liquid","Illusory","Ascendant","Shoeless","Earless","Eyeless","One-armed","One-legged","Crippled","Headless","Half-handed","Masked","Hooded","Cloaked","Heroic","Beautiful","Perverted","Licentious","Tentacled","Spiked","Shelled","Bejewelled","Gilt","Armored","Totemic","Karmic","Hidden","Iron","Copper","Platinum","Earthly","Ochre"];
 	
