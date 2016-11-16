@@ -62,17 +62,20 @@ function seeds(input){
 }
 
 function pluralize(term){
-	var plurals = [["Butterfl","y","ies"],["Cockroach","","es"],["Deer","",""],["Dragonfl","y","ies"],["Fox","","es"],["G","oose","eese"],["Mosquito","","es"],["Ox","","en"],["Phoenix","","es"],["Sta","ff","ves"],["Wol","f","ves"],["Leech","","es"],["Loach","","es"],["Hero","","es"],["Eternit","y","ies"],["Serenit","y","ies"],["Vort","ex","ices"],["Volcano","","es"],["Kni","fe","ves"],["Deit","y","ies"],["Cris","is","es"],["North","",""],["South","",""],["East","",""],["West","",""]];
+	var plurals = [["Butterfl","y","ies"],["Cockroach","","es"],["Deer","",""],["Dragonfl","y","ies"],["Fox","","es"],["G","oose","eese"],["Mosquito","","es"],["Ox","","en"],["Phoenix","","es"],["Sta","ff","ves"],["Wol","f","ves"],["Leech","","es"],["Loach","","es"],["Hero","","es"],["Eternit","y","ies"],["Serenit","y","ies"],["Vort","ex","ices"],["Volcano","","es"],["Kni","fe","ves"],["Deit","y","ies"],["Cris","is","es"],["North","",""],["South","",""],["East","",""],["West","",""],["Darkness","","es"],["Chopsticks","",""],["Bag"," of Holding","s of holding"],["Meat Jell","y","ies"],["Yellow Springs","",""],["Feng-Shui Compass","","es"]];
 	var unPterm = term;
 	var items;
 	
 	for(var i = 0; i < plurals.length;i++){
 		items = plurals[i];
-		term = (items[0] + items[1] == unPterm) ? items[0] + items[2] : term;
+		if (items[0] + items[1] == unPterm) {
+			term = items[0] + items[2];
+			return term;
+		} 
 		
 	}
 		
-	return (term == unPterm) ? term + "s" : term;
+	return term + "s";
 	
 }
 
@@ -87,9 +90,9 @@ function s(){
 
 function setTitles(){
 	
-	var nullTitles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Sect Leader","Pontifex","Sect Founder","Supreme General","Ancestor","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
+	var nullTitles = ["Hero","Cultivator","Scholar","Alchemist","Eccentric","Daoist","Dragoneer","Honor Guard","Herbalist","Dao Child","Dao General","Clan Chief","Overseer","Dao Protector","Dharma Protector","Elder","Guru","Grand Dragoneer","Immortal","Reverend","Crown Prince","Sect Leader","Pontifex","Sect Founder","Supreme General","Sage","Saint","Underworld Judge","Bodhisattva ","Paragon","Demon Sealer"];
 
-	var genderTitles = [["Swordsman","Swordswoman"],["Master","Mistress"],["Lord","Lady"],["King","Queen"],["Grandmaster","Grandmistress"],["Dao Emperor","Dao Empress"],["Dao Master","Dao Mistress"],["Chieftan","Cheiftess"],["Abbot","Abess"],["Greatfather","Greatmother"],["Dao Lord","Dao Lady"],["Patriarch","Matriarch"],["Priest","Priestess"],["Monk","Nun"],["Prince","Princess"],["Grandpa","Granny"],["Crown Prince","Crown Princess"]];
+	var genderTitles = [["Swordsman","Swordswoman"],["Master","Mistress"],["Lord","Lady"],["King","Queen"],["Grandmaster","Grandmistress"],["Dao Emperor","Dao Empress"],["Dao Master","Dao Mistress"],["Chieftan","Cheiftess"],["Abbot","Abess"],["Greatfather","Greatmother"],["Dao Lord","Dao Lady"],["Patriarch","Matriarch"],["Priest","Priestess"],["Ancestor","Ancestress"],["Monk","Nun"],["Prince","Princess"],["Grandpa","Granny"]];
 	
 	var index;
 	
@@ -120,33 +123,43 @@ function daoName(rwxmode,seed){
 	var titles = setTitles();
 	
 	
-	var adj = ["Abstruse","Angry","Arcadian","Archaic","Azure","Bashful","Berserk","Black","Blood-colored","Blue","Bronze","Capricious","Celestial","Cerulean","Clairvoyant","Cosmic","Courageous","Cowardly","Crafty","Crimson","Curious","Cyan","Demonic","Devilish","Dharmic","Divine","Dreadful","Enlightened","Enraged","Ethereal","Faceless","Fiendish","Furious","Garrulous","Ghostly","Golden","Gossamer","Greedy","Green","Heartbroken","Heavenly","Indigo","Jade","Jubilant","Loquacious","Lovesick","Lucky","Magenta","Magical","Magnanimous","Melancholic","Mystic","Necromantic","Nefarious","Occult","Onyx","Orange","Prideful","Profound","Psychic","Purple","Red","Renegade","Saffron","Sagacious","Serene","Shameless","Silver","Sublime","Supernal","Supreme","Transcendant","Vampiric","Vermilion","Voracious","White","Yang","Yellow","Yin","Yin-Yang","Youthful","Murderous","Vengeful","Killer","Benevolent","Chivalrous","Gallant","Heroic","Magnanimous","Intrepid","Reckless","Slashing","Stabbing","Glittering","Jumping","Running","Leaping","Flying","Floating","Sleeping","Eternal","Serene","Volcanic","Elemental","Icy","Burning","Freezing","Tranquil","Hellish","Underworld","Netherworld","Reborn","Deadly","Cross-legged","Lunar","Solar","Stellar","Universal","One","Neverending","Feathered","Furry","Obese","Gargantuan","Gigantic","Mythical","Ancient","Primeval","Primordial","Chaotic","Venerable","All-knowing","Omniscient","Nirvanic","Fragrant","Spicy","Revolting","Handsome","Bearded","Long-haired","Undying","Undead","Diamond","Violet","Righteous","Drunken","Invincible","Poisonous","Venemous","Toxic","Spinning","Whirling","Psycopathic","Granite","Stone","Wooden","Fiery","Raging","Empty","Original","Ophidian","Iridian","Subtle","True","False","Legendary","Fluid","Flowing","Liquid","Illusory","Ascendant","Shoeless","Earless","Eyeless","One-armed","One-legged","Crippled","Headless","Half-handed","Masked","Hooded","Cloaked","Heroic","Beautiful","Perverted","Licentious","Tentacled","Spiked","Shelled","Bejewelled","Gilt","Armored","Totemic","Karmic","Hidden","Iron","Copper","Platinum","Earthly","Ochre"];
+	var adj = ["Abstruse","Accursed","Adamant","All-knowing","Allheaven","Alternative","Amarinthine","Ancient","Angry","Animal","Antediluvian","Antimony","Antithetical","Apocalyptic","Apocryphal","Apotropaic","Aquiline","Arcadian","Archaic","Archetypal","Armored","Ascendant","Ashen","Astral","Azure","Azure-robed","Backstabbing","Barbarian","Bashful","Bearded","Beautiful","Bejewelled","Beloved","Benevolent","Benighted","Berserk","Bespoken","Black","Black-robed","Blood-colored","Bloodless","Bloody","Blue","Booming","Broken","Bronze","Burning","Capricious","Celestial","Cerulean","Chaotic","Chivalrous","Clairvoyant","Clarent","Cloaked","Complete","Copper","Corrupt","Cosmic","Courageous","Cowardly","Crafty","Crimson","Crimson-robed","Crippled","Cross-legged","Crumbling","Curious","Cyan","Deadly","Deathless","Deciduous","Defiant","Demonic","Devilish","Dharmic","Diamond","Divine","Domineering","Dreadful","Drunken","Earless","Earthly","Ebon","Elemental","Empty","Empyrean","Enclosed","Enlightened","Enraged","Entropic","Essential","Eternal","Ethereal","Eutrophic","Evergreen","Explosive","Eyeless","Faceless","False","Farsighted","Fearful","Feathered","Feckless","Ferrous","Fiendish","Fiery","Five-Elements","Floating","Flowing","Fluid","Flying","Forgotten","Fragrant","Freezing","Furious","Furry","Gallant","Gargantuan","Garrulous","Geomantic","Ghostly","Gigantic","Gilt","Glittering","Godly","Golden","Gossamer","Granite","Graven","Greedy","Green","Grey","Half-handed","Handsome","Hateful","Headless","Heartbroken","Heavenly","Hellish","Heretical","Heroic","Heroic","Heterodox","Hidden","Hooded","Hopeless","Icy","Illusory","Imperial","Indigo","Intransigent","Intrepid","Invincible","Iridian","Iron","Irredeemable","Irreverent","Jade","Jadeite","Jubilant","Jumping","Karmic","Killer","Leaping","Legendary","Licentious","Liquid","Loathsome","Lone","Long-haired","Loquacious","Loveless","Lovely","Lovesick","Lower","Lucky","Lunar","Magenta","Magical","Magnanimous","Magnanimous","Martial","Masked","Melancholic","Monochrome","Murderous","Mystic","Mythical","Near","Necromantic","Nefarious","Netherworld","Neverending","Nirvanic","Obese","Occult","Ochre","Omniscient","One","One-armed","One-legged","Onyx","Ophidian","Orange","Original","Orthodox","Overbearing","Overwhelming","Parochial","Peaceful","Penultimate","Penumbral","Perverted","Pious","Platinum","Pock-marked","Poisonous","Porcelain","Precipital","Prideful","Primeval","Primordial","Profound","Psychedelic","Psychic","Psycopathic","Pure","Purple","Purposeful","Raging","Rampaging","Reborn","Reckless","Red","Renegade","Revolting","Righteous","Rumbling","Running","Saffron","Sagacious","Salty","Sepulchral","Serene","Shameless","Shelled","Shoeless","Silver","Slashing","Sleeping","Solar","Sole","Sorrowful","Soulless","Sourceless","Spicy","Spiked","Spinning","Squamous","Stabbing","Stellar","Stone","Sublime","Subtle","Sulphurous","Supernal","Supreme","Symmetrical","Tattooed","Tenebral","Teneral","Tentacled","Tesselated","Timeless","Totemic","Toxic","Tranquil","Tranquil","Transcendant","True","Tyrannical","Tyrian","Ultimate","Umbral","Unaging","Uncreated","Undead","Underworld","Undying","Universal","Upper","Vampiric","Vegetal","Venemous","Venerable","Vengeful","Verdurous","Vermilion","Violet","Volcanic","Voracious","Whirling","White","White-robed","Wooden","Yang","Yellow","Yin","Yin-Yang","Youthful"];
 	
-	var pluralisers = ["Two","Three","Five","Seven","Nine","Ten","Eleven","Thirteen","Hundred","Thousand","Myriad","Infinite","Many","Manifold","Infinite","Nintey-Nine"];
+	var pluralisers = ["Two","Three","Five","Seven","Nine","Ten","Eleven","Thirteen","Hundred","Thousand","Myriad","Infinite","Many","Manifold","Infinite","Nintey-Nine","10,000","Thirty-Six","Sixty","Sixty-Four","Multitudinous","Endless"];
 	
-	var nouns = ["Alligator","Ant","Axe","Bat","Bear","Beetle","Broadsword","Cat","Caterpillar","Centipede","Chameleon","Cleaver","Cobra","Crane","Cricket","Crocodile","Dagger","Dog","Dove","Dragon","Drake","Eagle","Egret","Elephant","Fan","Flea","Frog","Gorilla","Grasshopper","Greatsword","Gryphon","Hare","Hawk","Hornet","Hummingbird","Jackal","Jaguar","Leopard","Lion","Lizard","Llama","Locust","Mace","Mantis","Millipede","Moth","Newt","Owl","Panda","Parrot","Peacock","Penguin","Pigeon","Pill","Porcupine","Qilin","Saber","Salamander","Scorpion","Shadow","Shield","Snake","Sparrow","Spear","Spider","Swan","Sword","Tarantula","Tiger","Toad","Tortoise","Toucan","Turtle","Unicorn","Viper","Wasp","Vampire","Mermaid","Manticore","Demon","Devil","Immortal","Ghost","Wyvern","Earthworm","Killer","Assassin","Pearl","Love","Hate","Mountain","Forest","River","Sea","Ocean","Lake","Cloud","Thunderclap","Tempest","Rainstorm","Flood","Tree","Flower","Rose","Chrysanthemum","Lotus","Orchid","Boulder","Heart","Fist","Blood","Moon","Sun","Star","Starlight","Meteor","Whirlpool","Windstorm","Hailstorm","Planet","Torture","Ice","Fire","Earth","Metal","Air","Water","Darkness","Light","Mansion","Pagoda","Spring","Summer","Fall","Winter","Bridge","Cauldron","God","Destruction","Murder","Salvation","Reincarnation","Shade","Death","Jade","Serpent","Python","Chaos","Nirvana","Mirror","Chopsticks","Wine","Alcohol","Flagon","Arrow","Chariot","Millionaire","Billionaire","Trillionaire","Quadrillionaire","Allheaven","Origin","Scholar","Revenant","Immortal","Despair","Seahorse","Porcupine","Hound","Divinity","Chariot","Butterfly","Cockroach","Deer","Dragonfly","Fox","Goose","Mosquito","Ox","Phoenix","Staff","Wolf","Leech","Loach","Hero","Eternity","Serenity","Vortex","Volcano","Knife","Deity","Crisis","North","South","East","West"];
+	var nouns = ["Darkness","Chopsticks","Air","Alcohol","Alligator","Ant","Arrow","Assassin","Asura","Avalanch","Axe","Bat","Bear","Beetle","Billionaire","Blood","Boulder","Bridge","Broadsword","Canopy","Cat","Caterpillar","Cauldron","Centipede","Chameleon","Chaos","Chariot","Chrysanthemum","Cleaver","Cloud","Cobra","Crane","Cricket","Crocodile","Dagger","Dao","Daoist","Death","Deity","Demon","Despair","Destruction","Devil","Divinity","Dog","Dove","Dragon","Drake","Eagle","Earth ","Earthworm","Egret","Elephant","Fall","Fan","Fire","Fist","Flagon","Flea","Flood","Flower","Forest","Frog","Ghost","God","God","Gorilla","Grasshopper","Greatsword","Gryphon","Hailstorm","Hare","Hate","Hawk","Heart","Hope","Hornet","Hound","Hummingbird","Hurricane","Ice","Immortal","Inferno","Jackal","Jade","Jaguar","Killer","Lake","Land","Leopard","Light","Lion","Lizard","Llama","Locust","Lotus","Love","Mace","Mansion","Manticore","Mantis","Mermaid","Metal","Meteor","Millionaire","Millipede","Mirror","Moon","Moth","Mountain","Murder","Neo-demon","Newt","Nirvana","Ocean","Ogre","Orchid","Origin","Owl","Pagoda","Panda","Parrot","Peacock","Pearl","Penguin","Pigeon","Pill","Planet","Porcupine","Porcupine","Purgatory","Python","Qilin","Quadrillionaire","Rainstorm","Reincarnation","Revenant","River","Rose","Saber","Salamander","Salvation","Scholar","Scorpion","Sea","Seahorse","Serpent","Shade","Shadow","Shield","Slaughter","Snake","Soul","Sparrow","Spear","Spider","Spring","Star","Starlight","Summer","Sun","Swan","Sword","Tarantula","Tempest","Thunderclap","Thunderstorm","Tiger","Toad","Tornado","Tortoise","Torture","Toucan","Tree","Trillionaire","Turtle","Umbrella","Unicorn","Vampire","Viper","Volcano","Wasp","Water","Whirlpool","Windstorm","Wine","Winter","Wyvern"];
+	
+	var ttwNouns = ["Black Hole","Dao Fruit","Flood Dragon","Flying Rain-Dragon","Hopping Vampire","Incense Stick","Lightning Bolt","Medicinal Herb","Medicinal Pill","Medicinal Plant","Nirvana Fruit","Promissory Note","Scroll Painting","Sea Dragon","Sea Turtle","Shooting Star","Spirit Fruit","Spirit Stone","Starry Sky","Wild Boar","Wooden Sword","Xuanwu Turtle","Yellow Springs","Pill Bottle","Feng-Shui Compass","Bag of Holding","Meat Jelly"];
+	
+	
+	//normalise the noun/adj picked
+	var adjLim = .8 * adj.length/(adj.length + pluralisers.length);
+	var nounLim = nouns.length/(nouns.length + ttwNouns.length);
 	
 	
 	var bp = "The Divination is complete.<br /><br /> You are... "
 	
-	var an;//chose which arrar is first part of name.
+	var ap;//chose which arrar is first part of name.
+	var nt;//chose which is second
 	var indices = [];
 	
 	var title;
 	
 	if(!seed){
-		//set adj or noun	
-		an = [adj,nouns,pluralisers][Math.floor(Math.random()*3)];
+		//set adj or noun	NEED TO ALTER THESE CONDITIONS TO REFLECT LIST SIZE
+		ap = [adj,pluralisers][Math.random() <= adjLim ? 0 : 1];
+		nt = [nouns,ttwNouns][Math.random() <= nounLim ? 0 : 1];
 		
-		indices = [Math.floor(Math.random() * titles.length), Math.floor(Math.random()* an.length), Math.floor(Math.random() * nouns.length)];
+		indices = [Math.floor(Math.random() * titles.length), Math.floor(Math.random()* ap.length), Math.floor(Math.random() * nt.length)];
 		
 	}
 	
 	else{
 		
-		an = [adj,nouns,pluralisers][Math.abs(seed[0]%3)];
+		ap = [adj,pluralisers][(Math.abs(seed[0]/2147483647) <= adjLim) ? 0 : 1];
+		nt = [nouns,ttwNouns][(Math.abs(seed[4]/2147483647) <= nounLim) ? 0 : 1];
 		
-		indices = [Math.abs(seed[1] % (titles.length - 1)), Math.abs(seed[2] % (an.length - 1)),  Math.abs(seed[3] % (nouns.length - 1))]
+		indices = [Math.abs(seed[1] % (titles.length - 1)), Math.abs(seed[2] % (ap.length - 1)),  Math.abs(seed[3] % (nt.length - 1))]
 		
 		
 	}
@@ -154,14 +167,13 @@ function daoName(rwxmode,seed){
 	//prevent duplicate titles.
 	if (indices[1] == indices[2]){
 			
-		indices[2] = indices[2] + 1 % (nouns.length - 1);
+		indices[2] = indices[2] + 1 % (nt.length - 1);
 			
 	}
 	
-	title = [titles[indices[0]], an[indices[1]], (an == pluralisers) ? pluralize(nouns[indices[2]]) : nouns[indices[2]]]
-
+	title = [titles[indices[0]], ap[indices[1]], (ap == pluralisers) ? pluralize(nt[indices[2]]) : nt[indices[2]]]
 	
-	if(rwxmode){
+	if((rwxmode) && ((nt != ttwNouns))){
 		return bp + title[0] + " " + toTitleCase(title[1] + title[2]) + "!!!";
 	}
 	else{
